@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>С Днем Рождения!</title>
+  <style>
+    body {
+      background-color: #00613c; /* Зеленый фон */
+      text-align: center; /* Выравнивание по центру */
+      font-family: sans-serif;
+      margin: 0;
+      position: relative; /* Для позиционирования сердечек */
+    }
+    h1, h2 {
+      color: #800000; /* Бордовый цвет */
+    }
+    .photo-left {
+      position: absolute; left: 20px; top: 20px; width: 400px; /* Позиционирование фото слева вверху */
+    }
+    .photo-right {
+      position: absolute; right: 20px; top: 20px; width: 400px; /* Позиционирование фото справа вверху */
+    }
+    .photo-middle-bottom {
+      width: 300px; margin-top: 20px; /* Фото под видео */
+    }
+    .photo1-bottom-left {
+      position: absolute; left: 300px; bottom: 20px; width: 200px; /* Фото слева снизу */
+    }
+    .photo2-bottom-right {
+      position: absolute; right: 300px; bottom: 20px; width: 200px; /* Фото справа снизу */
+    }
+    video {
+      display: block; margin: 20px auto; /* Центрирование видео */
+    }
+    .heart {
+      position: absolute;
+      font-size: 2em;
+      color: red;
+      animation: falling 5s linear infinite;
+    }
+    @keyframes falling {
+      0% { top: -10%; opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { top: 100%; opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <img src="фото лево.jpg" alt="Фото слева" class="photo-left">
+  <img src="фото право.jpg" alt="Фото справа" class="photo-right">
+
+  <h1>С ДНЕМ РОЖДЕНИЯ</h1>
+  <h2>любимой жене</h2>
+
+  <video width="320" height="240" controls>
+    <source src="для нее1.mp4" type="video/mp4">
+    Ваш браузер не поддерживает видео.
+  </video>
+
+  <img src="фото середина.jpg" alt="Фото по середине снизу" class="photo-middle-bottom">
+
+  <img src="фото1.jpg" alt="Фото 1" class="photo1-bottom-left">
+  <img src="фото2.jpg" alt="Фото 2" class="photo2-bottom-right">
+
+  <script>
+    // Добавляем сердечки
+    for (let i = 0; i < 20; i++) {
+      let heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(heart);
+    }
+  </script>
+
+</body>
+</html>
